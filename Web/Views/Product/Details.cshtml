@@ -1,0 +1,613 @@
+﻿@model ProductVM
+@{
+    ViewData["Title"] = "Cafe & Coffee Details";
+}
+@section Link{
+    <link rel="stylesheet" href="~/css/singleProduct/style.css">
+
+    <style>
+        .quantity {
+            position: relative;
+            margin-right:15px !important;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .quantity input {
+            height: 42px;
+            line-height: 1.65;
+            float: left;
+            display: block;
+            padding: 0;
+            margin: 0;
+            padding-left: 20px;
+            border: 1px solid #eee;
+        }
+
+            .quantity input:focus {
+                outline: 0;
+            }
+
+        .quantity-nav {
+            float: left;
+            position: relative;
+            height: 42px;
+        }
+
+        .quantity-button {
+            position: relative;
+            cursor: pointer;
+            border-left: 1px solid #eee;
+            width: 20px;
+            text-align: center;
+            color: #333;
+            font-size: 13px;
+            font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+            line-height: 1.7;
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+            .quantity-button.quantity-up {
+                position: absolute;
+                height: 50%;
+                top: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .quantity-button.quantity-down {
+                position: absolute;
+                bottom: -1px;
+                height: 50%;
+            }
+    </style>
+}
+
+<header>
+    <div class="bg-color"></div>
+    <nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navigation-menu">
+                        <div class="nav-logo">
+                            <img src="~/image/logo/kaffa_logo_light_1x.png" alt="">
+                        </div>
+                        <div class="nav-menu d-flex justify-content-center">
+                            <ul class="d-flex align-items-center">
+                                <li class="li">
+                                    <a href="#">Home</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                                    <ul class="drop-down">
+                                        <li class="hover-li"><a href="#">Natural Coffee</a></li>
+                                        <li class="hover-li"><a href="index.html">Coffee House</a></li>
+                                        <li class="hover-li"><a href="#">Parallax Page</a></li>
+                                        <li class="hover-li"><a href="#">Coffee Shop</a></li>
+                                        <li class="hover-li"><a href="#">Cafetaria</a></li>
+                                        <li class="hover-li"><a href="#">Craft Coffee</a></li>
+                                        <li class="hover-li"><a href="#">Natural Coffee RTL</a></li>
+                                    </ul>
+                                </li>
+                                <li class="li">
+                                    <a href="#">About Us</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                                    <ul class="drop-down">
+                                        <li class="hover-li"><a href="#">Testimonials</a></li>
+                                        <li class="hover-li"><a href="#">FAQ</a></li>
+                                        <li class="hover-li">
+                                            <a href="#">Gallery</a>
+                                            <ul class="drip">
+                                                <li class="drip-li"><a href="#">Gallery 2-Columns</a></li>
+                                                <li class="drip-li"><a href="#">Gallery 3-Columns</a></li>
+                                                <li class="drip-li"><a href="#">Gallery 4-Columns</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hover-li"><a href="#">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li class="li">
+                                    <a class="active-a" href="#">Products</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                                    <ul class="drop-down">
+                                        <li class="hover-li"><a class="active-a" href="shop.html">Shop</a></li>
+                                        <li class="hover-li"><a href="checkout.html">Cart</a></li>
+                                        <li class="hover-li"><a href="checkout.html">Checkout</a></li>
+                                        <li class="hover-li"><a href="#">My account</a></li>
+                                    </ul>
+                                </li>
+                                <li class="li">
+                                    <a href="#">Blog</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                                    <ul class="drop-down">
+                                        <li class="hover-li">
+                                            <a href="#">Blog with Sidebar</a>
+                                            <ul class="drip">
+                                                <li class="drip-li"><a href="#">Classic Right Sidebar</a></li>
+                                                <li class="drip-li"><a href="#">Masonry with Right Sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hover-li">
+                                            <a href="#">Blog without Sidebar</a>
+                                            <ul class="drip">
+                                                <li class="drip-li"><a href="#">Classic Blog</a></li>
+                                                <li class="drip-li"><a href="#">Masonry 2-Columns</a></li>
+                                                <li class="drip-li"><a href="#">Masonry 3-Columns</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="li"><a href="contacts.html">Contacts</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-phone d-flex align-items-center">
+                            <ul class="d-flex align-items-center">
+                                <li><a href="#"><i class="fas fa-phone-volume fa-2x"></i></a></li>
+                                <li><a class="number" href="#">0905-456-987-3</a></li>
+                            </ul>
+                        </div>
+                        <div class="nav-icon d-flex align-items-center">
+                            <ul class="d-flex align-items-center">
+                                <li><a class="user" href="#"><i class="fas fa-user"></i></a></li>
+                                <li>
+                                    <a class="cart" href="/checkout"><i class="fas fa-shopping-bag"></i></a><sup class="prod-count">0</sup>
+                                </li>
+                                <li class="search">
+                                    <i class="search-btn fas fa-search"></i>
+                                    <ul class="searchbox d-none">
+                                        <li>
+                                            <input class="input" type="text" placeholder="Search Here..." name="">
+                                            <i class="close fas fa-times"></i>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bar d-none">
+                            <!-- The overlay -->
+                            <div id="myNav" class="overlay">
+                                <!-- Button to close the overlay navigation -->
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                <div class="overlay-img">
+                                    <img src="~/image/logo/kaffa_logo_dark_1x.png" style="padding: 15px 30px;" alt="">
+                                </div>
+                                <ul class="accordion" data-accordion="open">
+                                    <li>
+                                        <div class="accordion-header">Home</div>
+                                        <ul class="accordion-body">
+                                            <li class="hover-li"><a href="#">Natural Coffee</a></li>
+                                            <li class="hover-li"><a href="index.html">Coffee House</a></li>
+                                            <li class="hover-li"><a href="#">Parallax Page</a></li>
+                                            <li class="hover-li"><a href="#">Coffee Shop</a></li>
+                                            <li class="hover-li"><a href="#">Cafetaria</a></li>
+                                            <li class="hover-li"><a href="#">Craft Coffee</a></li>
+                                            <li class="hover-li"><a href="#">Natural Coffee RTL</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="accordion-header">About Us</div>
+                                        <ul class="accordion-body">
+                                            <li class="hover-li"><a href="#">Testimonials</a></li>
+                                            <li class="hover-li"><a href="#">FAQ</a></li>
+                                            <li class="hover-li"><a href="#">Gallery</a></li>
+                                            <li class="hover-li"><a href="#">404 Page</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="accordion-header">Products</div>
+                                        <ul class="accordion-body">
+                                            <li class="hover-li"><a href="shop.html">Shop</a></li>
+                                            <li class="hover-li"><a href="checkout.html">Cart</a></li>
+                                            <li class="hover-li"><a href="checkout.html">Checkout</a></li>
+                                            <li class="hover-li"><a href="#">My account</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="accordion-header">Blog</div>
+                                        <ul class="accordion-body">
+                                            <li class="hover-li"><a href="#">Blog with Sidebar</a></li>
+                                            <li class="hover-li"><a href="#">Blog without Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="accordion-contact">Contacts</div>
+                                    </li>
+                                </ul>
+                                <div class="sidebar">
+                                    <div class="side">
+                                        <div class="shop">
+                                            <a href="checkout.html">
+                                                <i class="fas fa-shopping-bag"></i>
+                                                <span class="prod-count">0</span>
+                                            </a>
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="search">
+                                        <a href="#">
+                                            <input placeholder="Search" class="input" value="" type="text">
+                                            <i class="fas fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Use any element to open/show the overlay navigation menu -->
+                            <span onclick="openNav()"><i class="fas fa-bars fa-2x"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="middle d-flex justify-content-between">
+            <div class="market">
+                <span>Premium Coffee Market</span>
+            </div>
+            <div class="product">
+                <div class="products">
+                    <h1>Nicaragua 100% Arabica</h1>
+                    <ul>
+                        <li><a class="active-a" href="index.html"><span class="left">Home</span></a></li>
+                        <li><a href="shop.html"><span class="right">Products</span></a></li>
+                        <li><a href="#"><span class="arabica">Arabica Green</span></a></li>
+                        <li><a href="#"><span>Nicaragua 100% Arabica</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middle-icon">
+                <ul>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+<section class="detail-section">
+    <div class="container">
+        <div class="detail">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                   
+                    <div class="detail-img">
+                        <img src="~/@Model.Product.ImageUrl" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+                    <div class="detail-item">
+                        <div class="star d-flex">
+                            <ul class="d-flex">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <div class="custom">
+                                    <a href="#"> (customer review)</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <p class="price">
+                            @if (Model.Product.Discount != null)
+                            {
+                                <span class="old-price"><del>$@Model.Product.Price</del></span>
+                                <span class="new-price">$@Model.Product.Discount</span>
+
+                            }
+                            else
+                            {
+                                <span class="old-price">$@Model.Product.Price</span>
+
+                            }
+                        </p>
+                        <div class="detail-txt">
+                            <p>
+                                @(Model.Product.Description.Length > 100 ? Model.Product.Description.Substring(0, 100)+"..." : Model.Product.Description)
+                            </p>
+                        </div>
+                        <div class="quantity-box d-flex align-items-center">
+                            <div class="quantity">
+                                <div class="quantity">
+                                    <input class="plus-minus-cart" type="number" min="1" max="@Model.Product.Count" step="1" value="1">
+                                </div>
+
+                            </div>
+                            <div class="add">
+                                <a class="add cart-item" basketId="@Model.Product.Id" productId="@Model.Product.Id">Add to cart</a>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <span>
+                                Categories:
+                                <a href="#">Arabica Green</a>, <a href="#">Arabica Roasted</a>, <a href="#">
+                                    Mixed
+                                    Sorts
+                                </a>, <a href="#">Robusta Roasted</a>
+                            </span>
+                        </div>
+                        <div class="tag">
+                            <span>
+                                Tags:
+                                <a href="#">arabica</a>, <a href="#">coffee</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tab-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="menu-btns d-flex align-items-center">
+                    <button data-value=".description" class="menu-btn selected">Description</button>
+                    <button data-value=".additional" class="menu-btn">Additional information</button>
+                    <button data-value=".review" class="menu-btn">Reviews (1)</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tabs description ">
+                        <div class="description">
+                            <p>
+                               @Model.Product.Description
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tabs additional">
+                        <div class="additional">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Energy</th>
+                                        <td>
+                                            <p>498 kkal</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Protein</th>
+                                        <td class="kq">
+                                            <p>26 g</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fat</th>
+                                        <td>
+                                            <p>8 g</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Carbohydrates</th>
+                                        <td class="kq">
+                                            <p>49 g</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tabs review">
+                        <div class="review">
+                            <div class="admin">
+                                <div class="admin-img d-flex justify-content-between align-items-center">
+                                    <div class="admin-img-item d-flex align-items-center ">
+                                        <img src="http://1.gravatar.com/avatar/706e832117e654a99ef5064e0fad77ca?s=60&d=mm&r=g"
+                                             alt="">
+                                        <p>
+                                            <strong>admin </strong>
+                                            <span>July 3, 2020</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="rating">
+                                        <span>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="desc-review">
+                                    <p>
+                                        Nulla tincidunt neque dapibus odio lobortis, quis faucibus diam varius. In
+                                        pharetra erat eu ante ultrices, sed laoreet magna rhoncus. Proin quis ex
+                                        tincidunt, mollis neque nec, lacinia odio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="review-form">
+                                <div class="header">
+                                    <span>
+                                        Add a review
+                                    </span>
+                                </div>
+                                <div class="form-register">
+                                    <div class="head">
+                                        <p>
+                                            <span>Your email address will not be published.</span>
+                                            Required fields are marked
+                                            <span>*</span>
+                                        </p>
+                                    </div>
+                                    <div class="comment-form">
+                                        <label for="">Your rating</label>
+                                        <p>
+                                            <a href="#"><i class="far fa-star"></i></a>
+                                            <a href="#"><i class="far fa-star"></i></a>
+                                            <a href="#"><i class="far fa-star"></i></a>
+                                            <a href="#"><i class="far fa-star"></i></a>
+                                            <a href="#"><i class="far fa-star"></i></a>
+                                        </p>
+                                        <p>
+                                            <label for="">Your review <span>*</span></label>
+                                        </p>
+                                        <textarea name="comment" id="comment" cols="45" rows="8"></textarea>
+                                        <p>
+                                            <label for="">Name <span>*</span></label>
+                                        </p>
+                                        <input type="text" name="author" id="author" value size="30" required>
+                                        <p>
+                                            <label for="">Email <span>*</span></label>
+                                        </p>
+                                        <input type="email" name="email" id="email" value size="30" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="related-section">
+    <div class="container">
+        <div class="related-head">
+            <h1>Related products</h1>
+        </div>
+       @await Component.InvokeAsync("FeaturedProducts")
+    </div>
+</section>
+<footer class="footer">
+    <div class="bg"></div>
+    <div class="container-fluid">
+        <div class="footer-item">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="footer-box foot-logo">
+                        <div class="footer-logo">
+                            <img src="~/image/logo/kaffa_logo_light_1x.png"
+                                 alt="">
+                        </div>
+                        <div class="footer-text">
+                            <p>
+                                Etiam consequat sem ullamcorper, euismod
+                                <br>
+
+                                metus sit amet, tristique justo. Vestibulum
+                            </p>
+                        </div>
+                        <ul class="footer-icon">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="footer-box">
+                        <div class="info">
+                            <h3>Contact Info</h3>
+                        </div>
+                        <ul class="phone">
+                            <li class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="span">
+                                    <ul>
+                                        <li><span class="em">Our location:</span></li>
+                                        <li> <span>Rio de Janeiro, RJ Brazil, 04103 Route</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="phone">
+                            <li class="map">
+                                <i class="fas fa-phone-volume"></i>
+                                <div class="span">
+                                    <ul>
+                                        <span class="em">
+                                            Phones:
+
+                                        </span>
+                            </li>
+                            <li>
+                                <span>
+                                    +49078-039-23-11
+                                    <br>
+                                    +49078-028-55-60
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-box subscribes">
+                    <div class="info">
+                        <h3>Subscribe</h3>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your email...">
+                        <button>Subscribe</button>
+                    </div>
+                    <label for="">
+                        <input type="checkbox" value="1">
+                        <a href="#">I have read and agree to the terms & conditions</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-copy">
+        <div class="container-fluid">
+            <p>
+                <a href="#">Like-themes </a>© All Rights Reserved - 2020 -
+                <a href="#">Purchase</a>
+            </p>
+        </div>
+    </div>
+</footer>
+@section Script{
+    <script src="~/js/singleProduct/main.js"></script>
+    <script>
+            jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+    </script>
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Np3kVcjrfUSe9BlS8gGnLpVO6fJ3Fm2zo9rBvXZWTkUWCO0r9bSbPsE7EQi6RB/wEji53TTMH16er4Gn17P+CQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\EcommerceKaffa\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.7\\microsoft.aspnetcore.http.features.5.0.7.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

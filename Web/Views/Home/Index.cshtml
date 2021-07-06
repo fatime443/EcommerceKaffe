@@ -1,0 +1,872 @@
+﻿@model HomeVm
+@{
+    ViewData["Title"] = "Home";
+}
+@section Link{
+    <link rel="stylesheet" href="~/css/index/style.css">
+}
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navigation-menu d-flex justify-content-between align-items-center">
+                    <div class="nav-social  d-flex align-items-center">
+                        <ul class="d-flex align-items-center">
+                            <span>Follow Us</span>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a class="face" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-logo d-flex align-items-center">
+                        <a href="#">
+                            <img src="image/logo/kaffa_logo_light_1x.png"
+                                 alt="">
+                        </a>
+                    </div>
+                    <div class="nav-icon d-flex align-items-center">
+                        <ul class="d-flex align-items-center">
+                            <li><a class="user" href="#"><i class="fas fa-user"></i></a></li>
+                            <li><a class="cart" href="/checkout"><i class="fas fa-shopping-bag"></i></a><sup class="prod-count">0</sup> </li>
+                            <li class="search">
+                                <i class="search-btn fas fa-search"></i>
+                                <ul class="searchbox d-none">
+                                    <li>
+                                        <input class="input" type="text" placeholder="Search Here..." name="">
+                                        <i class="close-btn fas fa-times"></i>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bar d-none">
+                        <!-- The overlay -->
+                        <div id="myNav" class="overlay">
+                            <!-- Button to close the overlay navigation -->
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <div class="overlay-img">
+                                <img src="image/logo/kaffa_logo_dark_1x.png"
+                                     style="padding: 15px 30px;" alt="">
+                            </div>
+                            <ul class="accordion" data-accordion="open">
+                                <li>
+                                    <div class="accordion-header">Home</div>
+                                    <ul class="accordion-body">
+                                        <li class="hover-li"><a href="#">Natural Coffee</a></li>
+                                        <li class="hover-li"><a href="#">Coffee House</a></li>
+                                        <li class="hover-li"><a href="#">Parallax Page</a></li>
+                                        <li class="hover-li"><a href="index.html">Coffee Shop</a></li>
+                                        <li class="hover-li"><a href="#">Cafetaria</a></li>
+                                        <li class="hover-li"><a href="#">Craft Coffee</a></li>
+                                        <li class="hover-li"><a href="#">Natural Coffee RTL</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="accordion-header">About Us</div>
+                                    <ul class="accordion-body">
+                                        <li class="hover-li"><a href="#">Testimonials</a></li>
+                                        <li class="hover-li"><a href="#">FAQ</a></li>
+                                        <li class="hover-li"><a href="#">Gallery</a></li>
+                                        <li class="hover-li"><a href="#">404 Page</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="accordion-header">Products</div>
+                                    <ul class="accordion-body">
+                                        <li class="hover-li"><a href="/Home/Shop">Shop</a></li>
+                                        <li class="hover-li"><a href="#">Cart</a></li>
+                                        <li class="hover-li"><a href="#">Checkout</a></li>
+                                        <li class="hover-li"><a href="#">My account</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="accordion-header">Blog</div>
+                                    <ul class="accordion-body">
+                                        <li class="hover-li"><a href="#">Blog with Sidebar</a></li>
+                                        <li class="hover-li"><a href="#">Blog without Sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="accordion-contact"> Contacts</div>
+                                </li>
+                            </ul>
+                            <div class="sidebar">
+                                <div class="side">
+                                    <div class="shop">
+                                        <a href="checkout.html">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span class="prod-count">0</span>
+                                        </a>
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="search">
+                                    <a href="#">
+                                        <input placeholder="Search" class="input" value="" type="text">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Use any element to open/show the overlay navigation menu -->
+                        <span onclick="openNav()"><i class="fas fa-bars fa-2x"></i></span>
+                    </div>
+                </div>
+                <div class="nav-menu d-flex justify-content-center">
+                    <ul class="d-flex">
+                        <li class="li">
+                            <a class="active-a" href="#">Home</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                            <ul class="drop-down">
+                                <li class="hover-li"><a href="#">Natural Coffee</a></li>
+                                <li class="hover-li"><a href="index.html">Coffee House</a></li>
+                                <li class="hover-li"><a href="#">Parallax Page</a></li>
+                                <li class="hover-li"><a href="#">Coffee Shop</a></li>
+                                <li class="hover-li"><a href="#">Cafetaria</a></li>
+                                <li class="hover-li"><a href="#">Craft Coffee</a></li>
+                                <li class="hover-li"><a href="#">Natural Coffee RTL</a></li>
+                            </ul>
+                        </li>
+                        <li class="li">
+                            <a href="#">About Us</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                            <ul class="drop-down">
+                                <li class="hover-li"><a href="#">Testimonials</a></li>
+                                <li class="hover-li"><a href="#">FAQ</a></li>
+                                <li class="hover-li">
+                                    <a href="#">Gallery</a>
+                                    <ul class="drip">
+                                        <li class="drip-li"><a href="#">Gallery 2-Columns</a></li>
+                                        <li class="drip-li"><a href="#">Gallery 3-Columns</a></li>
+                                        <li class="drip-li"><a href="#">Gallery 4-Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hover-li"><a href="#">404 Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="li">
+                            <a href="#">Products</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                            <ul class="drop-down">
+                                <li class="hover-li"><a href="/Home/Shop">Shop</a></li>
+                                <li class="hover-li"><a href="checkout.html">Cart</a></li>
+                                <li class="hover-li"><a href="checkout.html">Checkout</a></li>
+                                <li class="hover-li"><a href="#">My account</a></li>
+                            </ul>
+                        </li>
+                        <li class="li">
+                            <a href="#">Blog</a><i class="up fas fa-angle-left"></i><i class="down fas fa-angle-down"></i>
+                            <ul class="drop-down">
+                                <li class="hover-li">
+                                    <a href="#">Blog with Sidebar</a>
+                                    <ul class="drip">
+                                        <li class="drip-li"><a href="#">Classic Right Sidebar</a></li>
+                                        <li class="drip-li"><a href="#">Masonry with Right Sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hover-li">
+                                    <a href="#">Blog without Sidebar</a>
+                                    <ul class="drip">
+                                        <li class="drip-li"><a href="#">Classic Blog</a></li>
+                                        <li class="drip-li"><a href="#">Masonry 2-Columns</a></li>
+                                        <li class="drip-li"><a href="#">Masonry 3-Columns</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="li"><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="slider-section">
+    <div class="slider">
+        @foreach (var item in Model.Headers)
+        {
+            <div class="slide active-slide" style="background: url(@Url.Content($"~/{item.ImageUrl}"));">
+                <div class="slide-text">
+                    <h1>@item.Subheader</h1>
+                    <h2>@item.Name</h2>
+                    <p class="mb-5">
+                        @item.Description
+                    </p>
+                    <div class="hover">
+                        <a href="#" class="taste coffee">Taste Coffee</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="controls">
+        <a class="prev">
+            <
+        </a>
+        <a class="next">></a>
+    </div>
+</section>
+<section class="products-section">
+    <div class="kaffa-products">
+        <h6>Kaffa Menu</h6>
+        <h3>Tasty Products</h3>
+    </div>
+    <div class="products">
+        @foreach (var item in Model.Tastes)
+        {
+            <div class="products-box">
+                <img class="img-fluid" src="@item.ImageUrl" alt="">
+                <div class="products-text">
+                    <h6>@item.Name</h6>
+                    <span>@item.Description</span>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</section>
+<section class="roasted-section">
+    <div class="container-fluid">
+        <div class="roasted">
+            <div class="roasted-text">
+                <h2>
+                    <span> Roasted Coffee </span><br>
+                    for Your Mood
+                </h2>
+                <div class="logo">
+                    <img src="image/logo/stamp-100x100.png" alt="">
+                </div>
+            </div>
+            <div class="roasted-location">
+                <p>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;<br>
+                    Suspendisse potenti. Nunc a urna eget massa vulputate consectetur ut quis mi.
+                </p>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                    <div class="our-location">
+                        <ul>
+                            <li class="our">Our Location</li>
+                            <li>Rio de Janeiro, RJ Brazil, 04103 Route</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="roasted-btns row align-items-center">
+                <div class="read-more"><a class="mr-5" href="#">Read More</a></div>
+                <div><a class="contact" href="#">Contact Us</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="element-section">
+    <div class="element">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/coffee-beans.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box  border-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/beans.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/coffee.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/coffee.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box  border-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/coffee.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+                    <div class="element-box">
+                        <div class="image-element">
+                            <img src="image/Slider/coffee/beans.png" alt="">
+                            <div class="text-element">
+                                <span> Wide Assortment </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="tab-menu">
+    <div class="menu-container">
+        <div class="menu-head">
+            <h6>Kaffa Menu</h6>
+            <h2>Coffee House</h2>
+        </div>
+        <div class="menu-btns">
+            <button type="button" class="menu-btn active-btn" id="chocolate">Chocolate</button>
+            <button type="button" class="menu-btn" id="coffee">Coffee</button>
+            <button type="button" class="menu-btn" id="sandwiches">Sandwiches</button>
+            <button type="button" class="menu-btn" id="sweets">Sweets</button>
+            <button type="button" class="menu-btn" id="tea">Tea</button>
+        </div>
+        <div class="food-items">
+            <div class="tabs active-tab">
+                <div class="row">
+                    @foreach (var item in Model.Menus)
+                    {
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="food-item chocolate">
+                                <div class="food-img">
+                                    <img src="@item.ImageUrl" alt="">
+                                </div>
+                                <div class="food-content">
+                                    <div class="food-text">
+                                        <h6 class="food-name cap">@item.Name</h6>
+                                        <div class="desc">
+                                            <p>@item.Description</p>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6 class="food-price">$@item.Price</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="row">
+                    @foreach (var item in Model.Menus)
+                    {
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="food-item coffee">
+                                <div class="food-img">
+                                    <img src="@item.ImageUrl" alt="">
+                                </div>
+                                <div class="food-content">
+                                    <div class="food-text">
+                                        <h6 class="food-name">@item.Name</h6>
+                                        <div class="desc">
+                                            <p>@item.Description\</p>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6 class="food-price">$@item.Price</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="row">
+                    @foreach (var item in Model.Menus)
+                    {
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="food-item sandwiches">
+                                <div class="food-img">
+                                    <img src="@item.ImageUrl" alt="">
+                                </div>
+                                <div class="food-content">
+                                    <div class="food-text">
+                                        <h6 class="food-name">@item.Name</h6>
+                                        <div class="desc">
+                                            <p>@item.Description\</p>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6 class="food-price">$@item.Price</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="row">
+                    @foreach (var item in Model.Menus)
+                    {
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="food-item sweets">
+                                <div class="food-img">
+                                    <img src="@item.ImageUrl" alt="">
+                                </div>
+                                <div class="food-content">
+                                    <div class="food-text">
+                                        <h6 class="food-name">@item.Name</h6>
+                                        <div class="desc">
+                                            <p>@item.Description\</p>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6 class="food-price">$@item.Price</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tabs">
+                <div class="row">
+                    @foreach (var item in Model.Menus)
+                    {
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="food-item tea">
+                                <div class="food-img">
+                                    <img src="@item.ImageUrl" alt="">
+                                </div>
+                                <div class="food-content">
+                                    <div class="food-text">
+                                        <h6 class="food-name">@item.Name</h6>
+                                        <div class="desc">
+                                            <p>@item.Description\</p>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <h6 class="food-price">$@item.Price</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="store-section">
+    <div class="container-fluid">
+        <div class="store-head">
+            <h6>Online Store</h6>
+            <h3>Take with You</h3>
+            <p>
+                Maecenas dapibus mattis eros, at fermentum sapien malesuada sit amet. Quisque in sollicitudin eros.
+                Aliquam eget sapien sed orci accumsan interdum at ac mi.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="store">
+                    <div class="store-box">
+                        <div class="store-img">
+                            <a href="singleProduct.html">
+                                <img src="image/store/product-new-01-600x852.jpg" alt="">
+                                <img class="img-hover" src="image/store/product-new-01-600x852.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="cart cart-item">
+                            <a class="add cart-item">Add to cart</a>
+                        </div>
+                        <div class="store-text">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="store-txt">
+                                <h2>Peru Whole Bean</h2>
+                            </div>
+                            <div class="store-price">
+                                <span>$42.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="store">
+                    <div class="store-box">
+                        <div class="store-img">
+                            <a href="singleProduct.html">
+                                <img src="image/store/product-new-02.jpg" alt="">
+                                <img class="img-hover" src="image/store/product-new-02.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="cart">
+                            <a class="add cart-item">Add to cart</a>
+                        </div>
+                        <div class="store-text">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="store-txt">
+                                <h2>Peru Whole Bean</h2>
+                            </div>
+                            <div class="store-price">
+                                <span class="old-price"><del>$19.99</del></span>
+                                <span class="new-price">$42.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="store">
+                    <div class="store-box">
+                        <div class="store-img">
+                            <a href="singleProduct.html">
+                                <img src="image/store/product-new-04-373x530.jpg" alt="">
+                                <img class="img-hover" src="image/store/product-new-04-373x530.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="cart">
+                            <a class="add cart-item">Add to cart</a>
+                        </div>
+                        <div class="store-text">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="store-txt">
+                                <h2>Peru Whole Bean</h2>
+                            </div>
+                            <div class="store-price">
+                                <span class="old-price"><del>$19.99</del></span>
+                                <span class="new-price">$42.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="store">
+                    <div class="store-box">
+                        <div class="store-img">
+                            <a href="singleProduct.html">
+                                <img src="image/store/product-new-06-600x852.jpg" alt="">
+                                <img class="img-hover" src="image/store/product-new-06-600x852.jpg" alt="">
+                            </a>
+                            <div class="sale">
+                                <span>sale</span>
+                            </div>
+                        </div>
+                        <div class="cart">
+                            <a class="add cart-item">Add to cart</a>
+                        </div>
+                        <div class="store-text">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="store-txt">
+                                <h2>Peru Whole Bean</h2>
+                            </div>
+                            <div class="store-price">
+                                <span>$42.49</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="online-store d-flex justify-content-center align-items-center">
+            <a href="#" class="online store">Online Store</a>
+        </div>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="bg-color"></div>
+    <div class="container-fluid">
+        <div class="testimonial-head">
+            <h6>Testimonials</h6>
+            <h3>Our Clients Say</h3>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <i class="fas fa-globe fa-4x"></i>
+                    <p class="row">
+                        Maecenas ultricies felis sit amet libero scelerisque, ut eleifend leo mattis.
+                        Aliquam porta
+                        facilisis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                        ac turpis egestas. Aliquam id.
+                    </p>
+                    <div class="testimonial-img">
+                        <img src="image/testimonial/testimonials-07-140x140.jpg" alt="">
+                    </div>
+                    <div class="img-head">
+                        Patric Stone
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <i class="fas fa-globe fa-4x"></i>
+                    <p class="row">
+                        Maecenas ultricies felis sit amet libero scelerisque, ut eleifend leo mattis.
+                        Aliquam porta
+                        facilisis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                        ac turpis egestas. Aliquam id.
+                    </p>
+                    <div class="testimonial-img">
+                        <img src="image/testimonial/testimonials-11-300x300.jpg" alt="">
+                    </div>
+                    <div class="img-head">
+                        Stefanie Rashford
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <i class="fas fa-globe fa-4x"></i>
+                    <p class="row">
+                        Maecenas ultricies felis sit amet libero scelerisque, ut eleifend leo mattis.
+                        Aliquam porta
+                        facilisis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                        ac turpis egestas. Aliquam id.
+                    </p>
+                    <div class="testimonial-img">
+                        <img src="image/testimonial/testimonials-11-300x300.jpg" alt="">
+                    </div>
+                    <div class="img-head">
+                        Stefanie Rashford
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-text">
+                    <i class="fas fa-globe fa-4x"></i>
+                    <p class="row">
+                        Maecenas ultricies felis sit amet libero scelerisque, ut eleifend leo mattis.
+                        Aliquam porta
+                        facilisis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+                        ac turpis egestas. Aliquam id.
+                    </p>
+                    <div class="testimonial-img">
+                        <img src="image/testimonial/testimonials-12-768x768.jpg" alt="">
+                    </div>
+                    <div class="img-head">
+                        Patric Stone
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="logo-section">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model.Brands)
+            {
+                <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+                    <div class="logo-img">
+                        <img src="~/@item.ImageUrl" alt="">
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+<section class="recent-section">
+    <div class="container-fluid">
+        <div class="recent-header">
+            <h6>Our blog</h6>
+            <h3>Recent Articles</h3>
+        </div>
+        <div class="recent-item">
+            <div class="row">
+                @foreach (var item in Model.Blogs)
+                {
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="recent-box">
+                            <div class="recent-img">
+                                <div class="bg-img"></div>
+                                <img src="@item.ImageUrl" alt="">
+                                <div class="roast">
+                                    <a href="#">Roasted Coffee</a>
+                                </div>
+                            </div>
+                            <ul class="calendar">
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>@item.ShareDate.ToString("MMM, dd, yyyy")</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-comment-alt"></i>
+                                    <span>0</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-eye"></i>
+                                    <span>67</span>
+                                </li>
+                            </ul>
+                            <div class="recent-link">
+                                <a href="#">
+                                    <h3>@item.Name</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+            <div class="recent-hover">
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="photo-section">
+    <div class="row">
+        @foreach (var item in Model.Photos)
+        {
+            <div class="col-6 col-sm-6 col-md-4 col-lg-2 p-0">
+                <div class="photo">
+                    <a data-fancybox="gallery" href="@item.ImageUrl">
+                        <img src="@item.ImageUrl" alt="">
+                        <div class="zoom">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<footer class="footer">
+    <div class="bg"></div>
+    <div class="container-fluid">
+        <div class="footer-item">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="footer-box foot-logo">
+                        <div class="footer-logo">
+                            <img src="image/logo/kaffa_logo_light_1x.png"
+                                 alt="">
+                        </div>
+                        <div class="footer-text">
+                            <p>
+                                Etiam consequat sem ullamcorper, euismod
+                                <br>
+
+                                metus sit amet, tristique justo. Vestibulum
+                            </p>
+                        </div>
+                        <ul class="footer-icon">
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="footer-box">
+                        <div class="info">
+                            <h3>Contact Info</h3>
+                        </div>
+                        <ul class="phone">
+                            <li class="map">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="span">
+                                    <ul>
+                                        <li><span class="em">Our location:</span></li>
+                                        <li> <span>Rio de Janeiro, RJ Brazil, 04103 Route</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="phone">
+                            <li class="map">
+                                <i class="fas fa-phone-volume"></i>
+                                <div class="span">
+                                    <ul>
+                                        <span class="em">
+                                            Phones:
+
+                                        </span>
+                            </li>
+                            <li>
+                                <span>
+                                    +49078-039-23-11
+                                    <br>
+                                    +49078-028-55-60
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-box subscribes">
+                    <div class="info">
+                        <h3>Subscribe</h3>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Your email...">
+                        <button>Subscribe</button>
+                    </div>
+                    <label for="">
+                        <input type="checkbox" value="1">
+                        <a href="#">I have read and agree to the terms & conditions</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer-copy">
+        <div class="container-fluid">
+            <p>
+                <a href="#">Like-themes </a>© All Rights Reserved - 2020 -
+                <a href="#">Purchase</a>
+            </p>
+        </div>
+    </div>
+</footer>
+@section Script{
+    <script src="~/js/index/main.js"></script>
+    <script src="~/js/script.js"></script>
+
+}

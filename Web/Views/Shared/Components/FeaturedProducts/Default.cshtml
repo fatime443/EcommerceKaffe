@@ -1,0 +1,56 @@
+﻿@model List<Product>
+<div class="related-item">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3">
+                <div class="related">
+                    <div class="related-box">
+                        <div class="related-img">
+                            <a href="/product/details/@item.Id">
+                                <img src="~/@item.ProductPictures[0].Picture.Url" alt="">
+                                <img class="img-hover" src="~/@item.ProductPictures[1].Picture.Url" alt="">
+                            </a>
+                            @if (item.IsSale)
+                            {
+                                <div class="sale" style="position: absolute; right: 20px; top: 30px; ">
+                                    <span style="padding: 10px 8px; border-radius: 50%; background-color: rgb(185, 40, 40); color: white; font-size: 12px; ">sale</span>
+                                </div>
+                            }
+                        </div>
+                        <div class="cart">
+                            <a basketId="@item.Id" class="add cart-item">Add to cart</a>
+                        </div>
+                        <div class="related-text">
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="related-txt">
+                                <h2><a style="color: #000;" href="/product/details/@item.Id">@item.Name</a></h2>
+                            </div>
+                            <div class="related-price">
+                                @if (item.Discount != null)
+                                {
+                                    <span class="old-price" style="color: #444;"><del>$@item.Price</del></span>
+                                    <span class="new-price">$@item.Discount</span>
+                                }
+                                else
+                                {
+                                    <span class="old-price" style="color:#444;">$@item.Price</span>
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
